@@ -91,19 +91,16 @@ function cercaIndice (array, element) {
     return bool;
 }
 
-function ordina (array) {
-    let elementMin = 0;
-    let temp = 0;
+function ordina (array) {    
     for (let i = 0; i<array.length -1; i ++) {
-        elementMin = i;
+        let min = 0;
         for (let j = i +1; j<array.length; j ++) {
-            if (array[j] < array[i]) {
-                elementMin = j;
-            }
+            if (array[i] > array[j]) {
+                min = array [i];
+                array[i] = array[j];
+                array[j] = min;
+            }                 
         }
-        temp = array[elementMin];
-        array[elementMin] = array[i];
-        array[i] = temp;
     }
     return array;
 }
