@@ -1,7 +1,9 @@
 const arrayTest = [5, 45, 8, 78, 6, 91, 7];
+const arrayTestMax = [5, 45, 8, 78, 6, 91, 7, 55, 88, 44, 1, 0, 22];
 const arrayTestTwo = ["ciao", "come", "45", "stiamo", "gigi"];
 console.log(arrayTest);
 console.log(arrayTestTwo);
+console.log(arrayTestMax);
 
 console.log(contaElementi(arrayTest));
 console.log(stampa(arrayTest));
@@ -12,7 +14,7 @@ console.log(inserisciInTesta(arrayTest, 78));
 console.log(join(arrayTest, arrayTestTwo));
 console.log(cerca(arrayTest, "ciao"));
 console.log(cercaIndice(arrayTest, 45));
-console.log(ordina(arrayTest));
+console.log(ordina(arrayTestMax));
 
 // FUNCTION
 
@@ -64,7 +66,6 @@ function inserisciInTesta (array, element) {
 }
 
 function join (arrayOne, arrayTwo) {
-    // const totalLength = arrayOne.length + arrayTwo.length;
     const arrayJoin = [];
     for (let i = 0; i<arrayOne.length; i ++) {
         arrayJoin.push(arrayOne[i]);
@@ -93,12 +94,12 @@ function cercaIndice (array, element) {
 
 function ordina (array) {    
     for (let i = 0; i<array.length -1; i ++) {
-        let min = 0;
+        let max = 0;
         for (let j = i +1; j<array.length; j ++) {
             if (array[i] > array[j]) {
-                min = array [i];
+                max = array [i];
                 array[i] = array[j];
-                array[j] = min;
+                array[j] = max;
             }                 
         }
     }
